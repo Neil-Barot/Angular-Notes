@@ -1,0 +1,48 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<h1 [class.text-red] = "bool"> Angular App </h1>
+
+<p>{{ message }}</p> 
+
+<app-navbar></app-navbar>
+<app-post [fromParent]='parentMessage' (messageEvent)="receiveMessage($event)"></app-post>
+<p>{{ fromChildOutput }}</p>
+
+<!-- Property Binding -->
+<img [src]="imgUrl" alt="picture of a tree">
+<!--<img src="{{imgUrl}}" alt="picture of a tree"> : This uses String interpolation-->
+
+<!-- Event Binding -->
+<button (click)="buttonClick()" > Click Me </button>
+
+<!-- Evet Filtering -->
+<input type="text" (keyup.enter)="onKeyUp(username.value)" #username>
+
+<!-- Two way Data Binding -->
+<input type="text" [(ngModel)] = "usernameSpot" (keyup.enter)="onKeyUp2()">
+
+<br>
+<br>
+
+<h1>Post Form</h1>
+<br>
+<input type="text">
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<router-outlet />
