@@ -33,8 +33,7 @@
 <br> -->
 
 
-<h1>Post Form</h1>
-<br>
+<h1>Post Form</h1> <br>
 <input type="text" placeholder = "Post Title" id = "postTitle" [(ngModel)] = "postTitle"> <br>
 <input type="text" placeholder = "Post Details" id = "postDetail" [(ngModel)] = "postDetails"> <br>
 <input type="text" placeholder = "Image Url" id = "imgUrl" [(ngModel)] = "imgUrl"> <br>
@@ -42,7 +41,7 @@
 <input type="checkbox" name="Add Background" id="background" [(ngModel)] = "background">
 <label for="background">Background</label> <br>
 
-<h1>{{postTitle}}</h1>
+<h1 [style.background]="background ? 'yellow' : 'white'">{{postTitle}}</h1>
 <p>{{postDetails}}</p>
 <img src={{imgUrl}} alt="">
 <a href={{postUrl}}>Additional Info</a>
