@@ -8,7 +8,7 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
-<h1 [class.text-red] = "bool"> Angular App </h1>
+<!-- <h1 [class.text-red] = "bool"> Angular App </h1>
 
 <p>{{ message }}</p> 
 
@@ -16,25 +16,38 @@
 <app-post [fromParent]='parentMessage' (messageEvent)="receiveMessage($event)"></app-post>
 <p>{{ fromChildOutput }}</p>
 
-<!-- Property Binding -->
+!-- Property Binding --
 <img [src]="imgUrl" alt="picture of a tree">
-<!--<img src="{{imgUrl}}" alt="picture of a tree"> : This uses String interpolation-->
+!--<img src="{{imgUrl}}" alt="picture of a tree"> : This uses String interpolation--
 
-<!-- Event Binding -->
+!-- Event Binding --
 <button (click)="buttonClick()" > Click Me </button>
 
-<!-- Evet Filtering -->
+!-- Evet Filtering --
 <input type="text" (keyup.enter)="onKeyUp(username.value)" #username>
 
-<!-- Two way Data Binding -->
+!-- Two way Data Binding --
 <input type="text" [(ngModel)] = "usernameSpot" (keyup.enter)="onKeyUp2()">
 
 <br>
-<br>
+<br> -->
+
 
 <h1>Post Form</h1>
 <br>
-<input type="text">
+<input type="text" placeholder = "Post Title" id = "postTitle" [(ngModel)] = "postTitle"> <br>
+<input type="text" placeholder = "Post Details" id = "postDetail" [(ngModel)] = "postDetails"> <br>
+<input type="text" placeholder = "Image Url" id = "imgUrl" [(ngModel)] = "imgUrl"> <br>
+<input type="text" placeholder = "Post Url" id = "postUrl" [(ngModel)] = "postUrl"> <br>
+<input type="checkbox" name="Add Background" id="background" [(ngModel)] = "background">
+<label for="background">Background</label> <br>
+
+<h1>{{postTitle}}</h1>
+<p>{{postDetails}}</p>
+<img src={{imgUrl}} alt="">
+<a href={{postUrl}}>Additional Info</a>
+
+
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->

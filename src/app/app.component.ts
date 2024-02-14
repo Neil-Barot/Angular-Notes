@@ -12,8 +12,8 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements AfterViewInit{
-  title = 'World';
+export class AppComponent {
+  /*title = 'World';
   bool:boolean = true;
   usernameSpot:string;
   parentMessage:string = 'Message changed';
@@ -46,5 +46,14 @@ export class AppComponent implements AfterViewInit{
 
   onKeyUp2() {
     console.log(this.usernameSpot)
-  }
+  }*/
+
+  title = 'World';
+  postTitle:string = "";
+  postDetails:string = "";
+  imgUrl:string = "";
+  postUrl:string = "";
+  background:boolean = false;
+
+
 }
