@@ -3,57 +3,44 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostComponent } from './post/post.component';
 import { FormsModule } from '@angular/forms';
+import { NgFor } from '@angular/common';
+import { JsonPipe } from '@angular/common';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, PostComponent, FormsModule],
+  imports: [RouterOutlet, NavbarComponent, PostComponent, FormsModule, NgFor, JsonPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  /*title = 'World';
-  bool:boolean = true;
-  usernameSpot:string;
-  parentMessage:string = 'Message changed';
-  message:string;
-  fromChildOutput:string; 
-  imgUrl:string = 'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg';
+  title = "world";
+  postArray: Array<string> = ['Post 1', 'Post 2', 'Post 3', 'Post 4', 'Post 5'];
 
-  @ViewChild(PostComponent) childComp;
+  objArray: Array<any> = [
+    { id: 1, postTitle: 'Post 1' },
+    { id: 2, postTitle: 'Post 2' },
+    { id: 3, postTitle: 'Post 3' },
+    { id: 4, postTitle: 'Post 4' },
+    { id: 5, postTitle: 'Post 5' }
+  ]
 
-  constructor() {
-     console.log(this.childComp)
+  objArrayLen = this.objArray.length;
+
+  constructor(){
+    for(let i = 0; i<this.postArray.length; i++){
+      console.log(this.postArray[i]);
+    }
   }
 
-  ngAfterViewInit() {
-    console.log(this.childComp)
-    this.message = this.childComp.childMessage;
+  addNew() {
+    this.objArray.push({id: this.objArrayLen + 1, postTitle: 'Post ' + (this.objArrayLen + 1)});
+    this.objArrayLen = this.objArray.length;
   }
 
-  receiveMessage($event){
-    this.fromChildOutput = $event;
+  deleteObj() {
+    this.objArray.pop();
+    this.objArrayLen = this.objArray.length;
   }
-
-  buttonClick() {
-    console.log('button click event worked');
-  }
-
-  onKeyUp(username) {
-    console.log(username)
-  }
-
-  onKeyUp2() {
-    console.log(this.usernameSpot)
-  }*/
-
-  title = 'World';
-  postTitle:string = "";
-  postDetails:string = "";
-  imgUrl:string = "";
-  postUrl:string = "";
-  background:boolean = false;
-
-
 }

@@ -1,60 +1,22 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<p>{{ postArray }}</p>
+<ul>
+    <li>{{postArray[1]}}</li>
+    <li>{{postArray[2]}}</li>
+</ul>
 
+<p>Fetched using ngFor Directives</p>
 
-<!-- <h1 [class.text-red] = "bool"> Angular App </h1>
+<ul>
+    <li *ngFor = "let post of postArray"> {{ post }} </li>
+</ul>
 
-<p>{{ message }}</p> 
+<p>Fetched Object Array</p>
 
-<app-navbar></app-navbar>
-<app-post [fromParent]='parentMessage' (messageEvent)="receiveMessage($event)"></app-post>
-<p>{{ fromChildOutput }}</p>
+<button (click)="addNew()">Add New Data</button><br>
 
-!-- Property Binding --
-<img [src]="imgUrl" alt="picture of a tree">
-!--<img src="{{imgUrl}}" alt="picture of a tree"> : This uses String interpolation--
-
-!-- Event Binding --
-<button (click)="buttonClick()" > Click Me </button>
-
-!-- Evet Filtering --
-<input type="text" (keyup.enter)="onKeyUp(username.value)" #username>
-
-!-- Two way Data Binding --
-<input type="text" [(ngModel)] = "usernameSpot" (keyup.enter)="onKeyUp2()">
-
-<br>
-<br> -->
-
-
-<h1>Post Form</h1> <br>
-<input type="text" placeholder = "Post Title" id = "postTitle" [(ngModel)] = "postTitle"> <br>
-<input type="text" placeholder = "Post Details" id = "postDetail" [(ngModel)] = "postDetails"> <br>
-<input type="text" placeholder = "Image Url" id = "imgUrl" [(ngModel)] = "imgUrl"> <br>
-<input type="text" placeholder = "Post Url" id = "postUrl" [(ngModel)] = "postUrl"> <br>
-<input type="checkbox" name="Add Background" id="background" [(ngModel)] = "background">
-<label for="background">Background</label> <br>
-
-<h1 [style.background]="background ? 'yellow' : 'white'">{{postTitle}}</h1>
-<p>{{postDetails}}</p>
-<img src={{imgUrl}} alt="">
-<a href={{postUrl}}>Additional Info</a>
-
-
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
+<ul>
+    <li *ngFor = 'let post of objArray'> {{ post.postTitle }} </li>
+    <button (click)="deleteObj()">Delete Data</button>
+</ul>
 
 <router-outlet />
