@@ -15,8 +15,10 @@
 <button (click)="addNew()">Add New Data</button><br>
 
 <ul>
-    <li *ngFor = 'let post of objArray'> {{ post.postTitle }} </li>
-    <button (click)="deleteObj()">Delete Data</button>
+    <li *ngFor = 'let post of objArray; let i = index'> 
+        {{i}}: {{ post.postTitle }} 
+        <button (click)="deleteObj(i)">Delete Data</button>
+    </li>
 </ul>
 
 <router-outlet />

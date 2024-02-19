@@ -26,7 +26,7 @@ export class AppComponent {
     { id: 5, postTitle: 'Post 5' }
   ]
 
-  objArrayLen = this.objArray.length;
+  objArraySpot = this.objArray.length;
 
   constructor(){
     for(let i = 0; i<this.postArray.length; i++){
@@ -35,12 +35,11 @@ export class AppComponent {
   }
 
   addNew() {
-    this.objArray.push({id: this.objArrayLen + 1, postTitle: 'Post ' + (this.objArrayLen + 1)});
-    this.objArrayLen = this.objArray.length;
+    this.objArray.push({id: this.objArraySpot + 1, postTitle: 'Post ' + (this.objArraySpot + 1)});
+    this.objArraySpot++;
   }
 
-  deleteObj() {
-    this.objArray.pop();
-    this.objArrayLen = this.objArray.length;
+  deleteObj(index) {
+    this.objArray.splice(index, 1)
   }
 }
