@@ -1,24 +1,22 @@
-<p>{{ postArray }}</p>
-<ul>
-    <li>{{postArray[1]}}</li>
-    <li>{{postArray[2]}}</li>
-</ul>
 
-<p>Fetched using ngFor Directives</p>
-
-<ul>
-    <li *ngFor = "let post of postArray"> {{ post }} </li>
-</ul>
-
-<p>Fetched Object Array</p>
+<p>NgFor and NgIf POC</p>
 
 <button (click)="addNew()">Add New Data</button><br>
 
-<ul>
-    <li *ngFor = 'let post of objArray; let i = index'> 
-        {{i}}: {{ post.postTitle }} 
-        <button (click)="deleteObj(i)">Delete Data</button>
-    </li>
-</ul>
+<div *ngIf = "objArray.length > 0; then postList; else noData"></div>
+
+<ng-template #postList>
+    <ul>
+        <li *ngFor = 'let post of objArray; let i = index'> 
+            {{i}}: {{ post.postTitle }} 
+            <button (click)="deleteObj(i)">Delete Data</button>
+        </li>
+    </ul>
+</ng-template>
+
+<ng-template #noData>
+    <p> There is no data to fetch... </p>
+</ng-template>
+
 
 <router-outlet />
