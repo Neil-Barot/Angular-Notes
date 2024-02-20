@@ -1,22 +1,18 @@
+<p>ngSwitch cases</p>
 
-<p>NgFor and NgIf POC</p>
+<div>
+    <button (click)="onClick('step 1')">Step 1</button>
+    <button (click)="onClick('step 2')">Step 2</button>
+    <button (click)="onClick('step 3')">Step 3</button>
+</div> <br>
 
-<button (click)="addNew()">Add New Data</button><br>
+<div [ngSwitch] = 'stepForm'>
+    <div *ngSwitchCase = "'step 1'">Step 1 Form</div>
+    <div *ngSwitchCase = "'step 2'">Step 2 Form</div>
+    <div *ngSwitchCase = "'step 3'">Step 3 Form</div>  
+    <div *ngSwitchDefault>Something Else</div> 
+</div>
 
-<div *ngIf = "objArray.length > 0; then postList; else noData"></div>
-
-<ng-template #postList>
-    <ul>
-        <li *ngFor = 'let post of objArray; let i = index'> 
-            {{i}}: {{ post.postTitle }} 
-            <button (click)="deleteObj(i)">Delete Data</button>
-        </li>
-    </ul>
-</ng-template>
-
-<ng-template #noData>
-    <p> There is no data to fetch... </p>
-</ng-template>
 
 
 <router-outlet />

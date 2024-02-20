@@ -3,43 +3,28 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostComponent } from './post/post.component';
 import { FormsModule } from '@angular/forms';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault} from '@angular/common';
 import { JsonPipe } from '@angular/common';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, PostComponent, FormsModule, NgFor, JsonPipe, NgIf],
+  imports: [RouterOutlet, NavbarComponent, PostComponent, FormsModule, 
+    NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = "world";
-  postArray: Array<string> = ['Post 1', 'Post 2', 'Post 3', 'Post 4', 'Post 5'];
-
-  objArray: Array<any> = [
-    { id: 1, postTitle: 'Post 1' },
-    { id: 2, postTitle: 'Post 2' },
-    { id: 3, postTitle: 'Post 3' },
-    { id: 4, postTitle: 'Post 4' },
-    { id: 5, postTitle: 'Post 5' }
-  ]
-
-  objArraySpot = this.objArray.length;
+  
+  stepForm: string = "Something Else";
 
   constructor(){
-    for(let i = 0; i<this.postArray.length; i++){
-      console.log(this.postArray[i]);
-    }
+    
   }
 
-  addNew() {
-    this.objArray.push({id: this.objArraySpot + 1, postTitle: 'Post ' + (this.objArraySpot + 1)});
-    this.objArraySpot++;
-  }
-
-  deleteObj(index) {
-    this.objArray.splice(index, 1)
+  onClick(status) {
+    this.stepForm = status;
   }
 }
