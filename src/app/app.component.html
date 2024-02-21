@@ -1,15 +1,8 @@
-<p>NgStyle Directives</p>
-
-<h1 
-[style.color] = "isActive ? 'red' : 'black'"
-[style.textTransform] = "isActive ? 'uppercase' : 'lowercase'"
->Angular Udemy Courses</h1>
+<p>NgClass Directives</p>
 
 <h1
-[ngStyle]="{
-    color: isActive ? 'red' : 'black',
-    textTransform: isActive ? 'uppercase' : 'lowercase'
-}"
->NgStyle Directives</h1>
+[class.main] = 'isActive'
+[class.text-weight] = 'isActive'
+>This text is used as a test</h1>
 
 <button (click)="onClick()">Change</button>
