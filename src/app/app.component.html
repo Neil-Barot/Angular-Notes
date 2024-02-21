@@ -5,4 +5,12 @@
 [class.text-weight] = 'isActive'
 >This text is used as a test</h1>
 
+<h1
+[ngClass]="{
+    'main' : isActive,
+    'text-weight': isActive
+}"
+
+>NgClass Directives</h1>
+
 <button (click)="onClick()">Change</button>
