@@ -18,13 +18,27 @@ import { JsonPipe } from '@angular/common';
 export class AppComponent {
   title = "world";
 
-  isActive: boolean = true;
-  
+  userName: string;
+  userEmail: string;
+  userAddress: string;
+
+  userArr: Array<any>;
+
   constructor(){
     
   }
 
   onClick() {
-    this.isActive = !this.isActive;
+    console.log(this.userName);
+
+    this.userArr.push({
+      "name": this.userName, 
+      "email": this.userEmail, 
+      "address": this.userAddress
+    });
+  }
+
+  deleteObj(index) {
+    this.userArr.splice(index,1);
   }
 }
