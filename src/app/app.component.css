@@ -13,6 +13,7 @@
 
 h1 {
     /* position: relative; */
+    /* animation: vibes 5s infinite; */
 }
 
 h1::after {
@@ -23,10 +24,15 @@ h1::after {
     top: 10px;
     left: 90px;
     background-color: red;
-    transition: opacity 300ms ease;
+    animation: vibes 1s alternate infinite;
 }
 
-h1:hover::after {
-    width: 100%;
-    opacity: 0;
+
+@keyframes vibes {
+    0% { top: 0px; }
+    25% {top: 200px; }
+    75% {top: 50px;}
+    100% {
+        top: 1200px;
+    }
 }
