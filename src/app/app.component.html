@@ -11,24 +11,26 @@
 </div>
 
 <div class="table-area">
-    <table width="500">
-        <thead>
-            <th>#</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Action</th>
-        </thead>
-
-
-        <tr *ngFor="let spot of userArr; let i = index">
-            <td>{{i}}</td>
-            <td>{{spot.name}}</td>
-            <td>{{spot.email}}</td>
-            <td>{{spot.address}}</td>
-            <td><button (click)="deleteObj(i)">Delete</button></td>
-        </tr>
-    </table>
+    <ng-template>
+        <table width="500">
+            <thead>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Action</th>
+            </thead>
+    
+    
+            <tr *ngFor="let spot of userArr; let i = index">
+                <td>{{i}}</td>
+                <td>{{spot.name}}</td>
+                <td>{{spot.email}}</td>
+                <td>{{spot.address}}</td>
+                <td><button (click)="deleteObj(i)">Delete</button></td>
+            </tr>
+        </table>
+    </ng-template>
 </div>
 
 
