@@ -1,37 +1,7 @@
-<div class="form-area">
-    <h1>User Details</h1>
+<h1>{{ title | lowercase }}</h1>
 
-    <input type="text" name="name" id="name" placeholder="Name" [(ngModel)]="userName"><br><br>
+<!-- Custom Pipe -->
 
-    <input type="text" name="email" id="email" placeholder="E-Mail" [(ngModel)]="userEmail"><br><br>
-    
-    <textarea name="address" id="address" cols="30" rows="10" placeholder="Address" [(ngModel)]="userAddress"></textarea><br><br>
-    
-    <button (click)="onClick()">Save Data</button>
-</div>
-
-<div class="table-area">
-    <ng-template>
-        <table width="500">
-            <thead>
-                <th>#</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Address</th>
-                <th>Action</th>
-            </thead>
-    
-    
-            <tr *ngFor="let spot of userArr; let i = index">
-                <td>{{i}}</td>
-                <td>{{spot.name}}</td>
-                <td>{{spot.email}}</td>
-                <td>{{spot.address}}</td>
-                <td><button (click)="deleteObj(i)">Delete</button></td>
-            </tr>
-        </table>
-    </ng-template>
-</div>
-
+<h3>{{ userDetails.city | append }}</h3>
 
 <router-outlet />
