@@ -22,17 +22,17 @@ h1::after {
     height: 20px;
     position: absolute;
     top: 10px;
-    left: 90px;
+    right: 90px;
     background-color: red;
     animation: vibes 1s alternate infinite;
 }
 
 
 @keyframes vibes {
-    0% { top: 0px; }
-    25% {top: 200px; }
-    75% {top: 50px;}
+    0% { right: 0px; }
+    25% {right: 200px; }
+    75% {right: 50px;}
     100% {
-        top: 1200px;
+        right: 1200px;
     }
 }
