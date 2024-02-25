@@ -6,8 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class AppendCliPipe implements PipeTransform {
 
-  transform(value: any, args?: any): unknown {
-    return null;
+  transform(value: any, args?: any) {
+    return "City Name Cli: " + value;
   }
 
 }

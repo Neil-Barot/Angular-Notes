@@ -32,7 +32,5 @@ h1::after {
     0% { right: 0px; }
     25% {right: 200px; }
     75% {right: 510px;}
-    100% {
-        right: 1200px;
-    }
+    100% {right: 1200px;}
 }

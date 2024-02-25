@@ -4,7 +4,10 @@
 
     <!-- Custom Pipe -->
 
-    <h3>{{ userDetails.city | append }}</h3>
+    <h3>{{ userDetails.city | append }}</h3><br>
+    <h3>{{ userDetails.city | appendCli }}</h3>
 </div>
+
+<p>{{ dummyText | summary : 25 }}</p>
 
 <router-outlet />
