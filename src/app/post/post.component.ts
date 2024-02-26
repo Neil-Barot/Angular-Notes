@@ -1,32 +1,26 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PostListComponent } from './post-list/post-list.component';
+import { PostService } from '../services/post.service';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-post',
   standalone: true,
-  imports: [PostListComponent],
+  imports: [PostListComponent, NgFor],
   templateUrl: './post.component.html',
   styleUrl: './post.component.css'
 })
 export class PostComponent implements OnInit{
+  posts: Array<any>;
   
-  title:string = "Posts";
-  postParentMessage:string = "Post to PostList";
+  constructor(private postService: PostService) {
+    //let postService = new PostService()
 
-  childMessage:string = 'From Child Component';
-  outputChildMessage:string = 'Message from Child Component Via Output'
-
-  @Input() fromParent:string;
-
-  @Output() messageEvent = new EventEmitter<string>();
-  
-  constructor() {}
+    this.posts = postService.postList;
+  }
  
   ngOnInit(): void {
     
   }
 
-  sendMessage(){
-    this.messageEvent.emit(this.outputChildMessage)
-  }
 }

@@ -2,6 +2,7 @@ import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostComponent } from './post/post.component';
+import { PostListComponent } from './post-list/post-list.component';
 import { FormsModule } from '@angular/forms';
 import { AppendPipe } from './pipes/append.pipe';
 import { AppendCliPipe } from './pipes/append-cli.pipe';
@@ -13,7 +14,7 @@ import { JsonPipe, UpperCasePipe, LowerCasePipe } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, PostComponent, 
+  imports: [RouterOutlet, NavbarComponent, PostComponent, PostListComponent,
     AppendPipe, AppendCliPipe, SummaryPipe,
     FormsModule, UpperCasePipe, LowerCasePipe],
   templateUrl: './app.component.html',

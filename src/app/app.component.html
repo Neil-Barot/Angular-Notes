@@ -1,13 +1,4 @@
-
-<div class="container">
-    <h1>{{ title | lowercase }}</h1>
-
-    <!-- Custom Pipe -->
-
-    <h3>{{ userDetails.city | append }}</h3><br>
-    <h3>{{ userDetails.city | appendCli }}</h3>
-</div>
-
-<p>{{ dummyText | summary : 25 }}</p>
-
-<router-outlet />
+<h1>Post Component</h1>
+<app-post></app-post>
+<h1>Post List Component</h1>
+<app-post-list></app-post-list>
