@@ -3,12 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { AppendPipe } from './pipes/append.pipe';
 import { AppendCliPipe } from './pipes/append-cli.pipe';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault, NgStyle, NgClass} from '@angular/common';
 import { JsonPipe, UpperCasePipe, LowerCasePipe } from '@angular/common';
+import test from 'node:test';
 
 
 @Component({
@@ -33,6 +34,10 @@ export class AppComponent {
 
   constructor(){
     
+  }
+
+  onSubmit(f: NgForm) {
+    console.log(f)
   }
 
 }
