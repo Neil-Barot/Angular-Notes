@@ -3,13 +3,14 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormControl, FormsModule, NgForm } from '@angular/forms';
 import { AppendPipe } from './pipes/append.pipe';
 import { AppendCliPipe } from './pipes/append-cli.pipe';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault, NgStyle, NgClass} from '@angular/common';
 import { JsonPipe, UpperCasePipe, LowerCasePipe } from '@angular/common';
 import test from 'node:test';
+import { NgModel } from '@angular/forms';
 
 
 @Component({
@@ -17,7 +18,7 @@ import test from 'node:test';
   standalone: true,
   imports: [RouterOutlet, NavbarComponent, PostComponent, PostListComponent,
     AppendPipe, AppendCliPipe, SummaryPipe,
-    FormsModule, UpperCasePipe, LowerCasePipe],
+    FormsModule, UpperCasePipe, LowerCasePipe, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -38,6 +39,10 @@ export class AppComponent {
 
   onSubmit(f: NgForm) {
     console.log(f)
+  }
+
+  getValue(f: FormControl | NgModel) {
+    console.log(f);
   }
 
 }
