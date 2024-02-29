@@ -18,7 +18,7 @@ import { NgModel } from '@angular/forms';
   standalone: true,
   imports: [RouterOutlet, NavbarComponent, PostComponent, PostListComponent,
     AppendPipe, AppendCliPipe, SummaryPipe,
-    FormsModule, UpperCasePipe, LowerCasePipe, NgIf],
+    FormsModule, UpperCasePipe, LowerCasePipe, NgIf, NgClass],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
