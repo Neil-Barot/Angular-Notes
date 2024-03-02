@@ -11,13 +11,14 @@ import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault, NgStyle, NgClass}
 import { JsonPipe, UpperCasePipe, LowerCasePipe } from '@angular/common';
 import test from 'node:test';
 import { NgModel } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, NavbarComponent, PostComponent, PostListComponent,
-    AppendPipe, AppendCliPipe, SummaryPipe,
+    AppendPipe, AppendCliPipe, SummaryPipe, ReactiveFormsModule,
     FormsModule, UpperCasePipe, LowerCasePipe, NgIf, NgClass],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
