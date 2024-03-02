@@ -39,7 +39,7 @@ export class AppComponent {
   }
 
   onSubmit(f: NgForm) {
-    console.log(f.value)
+    console.log(f)
   }
 
   getValue(f: FormControl | NgModel) {
